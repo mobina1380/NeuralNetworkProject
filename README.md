@@ -5,7 +5,6 @@ This project focuses on recognizing emotions from speech by leveraging both acou
 ## DataSet(Sharif Emotional Speech Database (ShEMO))
 the ShEMO dataset contains 3000 audio files along with 3000 text files for each sentence as a ground-truth transcription. The text file of the sentence related to the corresponding audio file can be found through the names of the files. In fact, the audio and the text file of an utterance have the same name. But out of 3000 files, only 2838 have the same name. With further investigations, we found that some of these text files have the wrong names and referred to the wrong audio file. In the picture below, examples of errors in referencing audio and text files can be seen. We fixed the errors and inconsistencies in ShEMO dataset by using an Automatic Speech Recognition (ASR) system.
 
-<img src="https://user-images.githubusercontent.com/55990659/200169946-fb1d0af5-186a-4742-b5a1-f282aa861e44.PNG" alt="ShEMO errors" width="400"/>
 
 ## Project Structure
 
@@ -18,9 +17,12 @@ the ShEMO dataset contains 3000 audio files along with 3000 text files for each 
 
 ## Setup Instructions
 
+
 1. **Install dependencies**:
-  ```bash
-      pip freeze > requirements.txt
+   ```bash
+   pip freeze > requirements.txt
+
+
 
 2. **Download the Shemo Dataset**:
    - Place the dataset inside the `shemo` directory.
@@ -32,6 +34,7 @@ the ShEMO dataset contains 3000 audio files along with 3000 text files for each 
    - Run the test script to verify that everything is set up correctly.
    ```bash
    python TEST_Modified_ShEMO.py
+
 
 5. **Train the Model**:
    - To train the model, run the following command
