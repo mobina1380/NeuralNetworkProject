@@ -1,0 +1,15 @@
+json
+numpy
+tensorflow
+torch
+transformers
+opensmile_preprocessing
+soundfile
+torchaudio
+fastapi
+sklearn
+hazm
+num2fawords
+librosa
+pandas
+datasets
