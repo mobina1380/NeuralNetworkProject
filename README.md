@@ -22,6 +22,7 @@ the ShEMO dataset contains 3000 audio files along with 3000 text files for each 
    ```bash
    pip freeze > requirements.txt
 2. **Download the Shemo Dataset**:
+    link:[ShEMO](https://github.com/mansourehk/ShEMO)
    - Place the dataset inside the `shemo` directory.
 
 3. **Run Feature Extraction**:
@@ -41,7 +42,7 @@ the ShEMO dataset contains 3000 audio files along with 3000 text files for each 
    - Use the following command to detect the emotion
    -Instead of this line
     Upload your audio => audio_file = 'shortvoice.wav'
-    
+
    ```bash
    python inference.py
 

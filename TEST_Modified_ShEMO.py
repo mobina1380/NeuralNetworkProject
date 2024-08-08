@@ -1,4 +1,3 @@
-# !curl --remote-name-all https://storage.googleapis.com/danielk-files/farsi-text/merged_files/w2c_merged.txt
 
 # !pip install parsivar
 # !pip install num2fawords
