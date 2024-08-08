@@ -105,22 +105,7 @@ with open("words.arpa", "r") as read_file, open("words_correct.arpa", "w") as wr
 
 
 
-#!/usr/bin/env python
-# ----------------------------------------------------------------------------
-# Copyright 2015-2016 Nervana Systems Inc.
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
-#
-#      http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
-# ----------------------------------------------------------------------------
-# Modified to support pytorch Tensors
+
 
 import Levenshtein as Lev
 import torch
@@ -299,9 +284,6 @@ class GreedyDecoder(Decoder):
                                                    remove_repetitions=True, return_offsets=True)
         return strings, offsets
 
-# !pip install folium==0.2.1
-# !pip install https://github.com/kpu/kenlm/archive/master.zip pyctcdecode
-# !pip install git+https://github.com/huggingface/transformers.git
 
 from transformers import Wav2Vec2ForCTC, Wav2Vec2Processor, AutoProcessor, Wav2Vec2ProcessorWithLM, Wav2Vec2CTCTokenizer
 
@@ -355,25 +337,6 @@ processor_with_lm = Wav2Vec2ProcessorWithLM(
 
 import os
 
-# os.system('git clone --recursive https://github.com/parlance/ctcdecode.git')
-# os.system('cd ctcdecode && pip install .')
-# !git clone --recursive https://github.com/parlance/ctcdecode.git
-# !cd ctcdecode && pip install .
-
-# beam_decoder = BeamCTCDecoder(vocab, lm_path='lm4.binary',
-#                                 # alpha=0.6, beta=0.8,
-#                                 alpha=1.0, beta=3.5,        # fine-tuned
-#                                 cutoff_top_n=80, cutoff_prob=1.0,
-#                                 beam_width=400, num_processes=16,
-#                                 blank_index=vocab.index(processor.tokenizer.pad_token))
-
-# !wget https://github.com/aliyzd95/ShEMO-Modification/raw/main/shemo.zip
-# !unzip shemo.zip
-# !rm shemo.zip
-
-# !wget https://github.com/aliyzd95/ShEMO-Modification/raw/main/modified_shemo.json
-
-# !wget https://github.com/pariajm/sharif-emotional-speech-dataset/raw/master/shemo.json
 greedy_decoder = GreedyDecoder(labels=vocab)
 
 # Example usage for decoding
@@ -473,28 +436,4 @@ def predict(batch):
     return batch
 
 result = dataset.map(predict, batched=False)
-print('kkkkkkkkkkkkkk')
-
-# wer = load_metric("wer")
-# print(f"WER on {MODE}_ShEMO: {100 * wer.compute(predictions=result['predicted'], references=result['sentence'])}")
-
-# from jiwer import *
-
-# count = 0
-# for data in result:
-
-#     target = data["sentence"]
-#     predict = data["predicted"]
-
-#     w = wer(target, predict)
-#     c = cer(target, predict)
-
-#     if w>0.5 and c>0.5:
-#         count += 1
-#         print(data["path"])
-#         print(f'sentence: {target}, predicted: {predict}')
-#         print(f'wer={w}, cer={c}')
-#         print('==================================================')
-
-# print(f'There are {count} files out of a total of {len(result)} files in the dataset that has wer>0.5 and cer>0.5')
 

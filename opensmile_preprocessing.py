@@ -14,7 +14,7 @@ tf.random.set_seed(seed_value)
 
 import opensmile
 
-path = 'shemo'  # download and extract files from https://github.com/aliyzd95/ShEMO-Modification/raw/main/shemo.zip
+path = 'shemo'  
 emo_codes = {"A": 0, "W": 1, "H": 2, "S": 3, "N": 4, "F": 5}
 emo_labels = ["anger", "surprise", "happiness", "sadness", "neutral", "fear"]
 
