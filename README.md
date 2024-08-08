@@ -1,4 +1,4 @@
-# Speech Emotion Recognition using Shemo Dataset
+# Emotion Recognition In Persian Speech Using Deep Neural Networks 
 
 This project focuses on recognizing emotions from speech by leveraging both acoustic features and textual features extracted from audio data. The Shemo dataset is used to train and evaluate our models.
 
@@ -18,24 +18,27 @@ the ShEMO dataset contains 3000 audio files along with 3000 text files for each 
 
 ## Setup Instructions
 
-1. **Download the Shemo Dataset**:
+1. **Install dependencies**:
+  ```bash
+      pip freeze > requirements.txt
+
+2. **Download the Shemo Dataset**:
    - Place the dataset inside the `shemo` directory.
 
-2. **Run Feature Extraction**:
+3. **Run Feature Extraction**:
    - Ensure that the openSMILE and Whisper tools are set up and configured properly in their respective directories.
 
-3. **Execute the Test Script**:
+4. **Execute the Test Script**:
    - Run the test script to verify that everything is set up correctly.
    ```bash
    python TEST_Modified_ShEMO.py
 
-
-4. **Train the Model**:
+5. **Train the Model**:
    - To train the model, run the following command
    ```bash
    python model.py
 
-5. **Predict Emotion**:
+6. **Predict Emotion**:
    - Use the following command to detect the emotion
    -Instead of this line
     Upload your audio => audio_file = 'shortvoice.wav'
