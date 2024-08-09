@@ -1,10 +1,9 @@
-from fastapi import FastAPI, UploadFile, File, HTTPException, Header
-from transformers import WhisperProcessor, WhisperForConditionalGeneration
+from fastapi import FastAPI
 import torchaudio
 import torch
 from torchaudio.transforms import Resample
 from fastapi import APIRouter
-from transformers import AutoProcessor, AutoModelForSpeechSeq2Seq ,AutoTokenizer ,AutoModelForSequenceClassification
+from transformers import AutoProcessor, AutoModelForSpeechSeq2Seq  
 
 processor = AutoProcessor.from_pretrained("steja/whisper-small-persian")
 model = AutoModelForSpeechSeq2Seq.from_pretrained("steja/whisper-small-persian")

@@ -35,6 +35,7 @@ the ShEMO dataset contains 3000 audio files along with 3000 text files for each 
    python TEST_Modified_ShEMO.py
 5. **Train the Model**:
    - To train the model, run the following command
+   
    ```bash
    python model.py
 

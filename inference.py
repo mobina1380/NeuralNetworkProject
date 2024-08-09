@@ -7,7 +7,6 @@ import soundfile as sf
 from whisper import transcribe_audio
 import torchaudio
 import torch
-import json
 import numpy as np
 import tensorflow as tf
 
